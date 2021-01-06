@@ -1,38 +1,66 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    text-align: center;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cell {
+    background-color: lightgray;
+}
+
+.cell:nth-child(n + 3):nth-child(-n + 7),
+.cell:nth-child(n + 19):nth-child(-n + 23),
+.cell:nth-child(n + 33):nth-child(-n + 112),
+.cell:nth-child(n + 115):nth-child(-n + 119),
+.cell:nth-child(n + 131):nth-child(-n + 135),
+.cell:nth-child(n + 147):nth-child(-n + 151),
+.cell:nth-child(n + 163):nth-child(-n + 167),
+.cell:nth-child(n + 179):nth-child(-n + 183),
+.cell:nth-child(n + 195):nth-child(-n + 199),
+.cell:nth-child(n + 211):nth-child(-n + 215),
+.cell:nth-child(n + 227):nth-child(-n + 231),
+.cell:nth-child(n + 243):nth-child(-n + 247) {
+    background-color: gray;
+    color: white;
+}
+
+.cell:nth-child(n + 81):nth-child(-n + 96) {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.cell:nth-child(n + 6):nth-child(-n + 6),
+.cell:nth-child(n + 22):nth-child(-n + 22),
+.cell:nth-child(n + 38):nth-child(-n + 38),
+.cell:nth-child(n + 86):nth-child(-n + 86),
+.cell:nth-child(n + 54):nth-child(-n + 54),
+.cell:nth-child(n + 102):nth-child(-n + 102),
+.cell:nth-child(n + 118):nth-child(-n + 118),
+.cell:nth-child(n + 134):nth-child(-n + 134),
+.cell:nth-child(n + 150):nth-child(-n + 150),
+.cell:nth-child(n + 166):nth-child(-n + 166),
+.cell:nth-child(n + 182):nth-child(-n + 182),
+.cell:nth-child(n + 198):nth-child(-n + 198),
+.cell:nth-child(n + 214):nth-child(-n + 214),
+.cell:nth-child(n + 230):nth-child(-n + 230),
+.cell:nth-child(n + 246):nth-child(-n + 246) {
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
 }

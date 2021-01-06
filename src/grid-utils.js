@@ -1,30 +1,51 @@
-import { FRONT_VEHICLES, SIDE_VEHICLES } from './emoji-groups'
-import { getRandomEmojiFromGroup } from './emoji-utils'
+import {
+    BUILDINGS,
+    FRONT_VEHICLES,
+    PLANTS,
+    SIDE_VEHICLES,
+} from './emoji-groups'
+import { getRandomEmojiFromGroup, maybeGetEmojiFromGroup } from './emoji-utils'
 
 const SIZE = 16
 
 export const generateVerticalRoad = rowIndex => {
     const row = []
     for (let col = 0; col < SIZE; col++) {
-        // road limits
-        if (col === 2 || col === 6) {
-            row[col] = '║'
-            continue
-        }
+        switch (col) {
+            case 1:
+            case 7:
+                row[col] = maybeGetEmojiFromGroup([...BUILDINGS, ...PLANTS])
+                break
+            case 2:
+            case 6:
+                // road limits
+                row[col] = '║'
+                break
 
-        // middle road lines
-        if (col === 4 && rowIndex % 2 === 0) {
-            row[col] = '╵'
-            continue
-        }
+            case 3:
+            case 5:
+                // road lanes
+                row[col] = getRandomEmojiFromGroup(FRONT_VEHICLES)
+                break
 
-        // road lanes
-        if (col === 3 || col === 5) {
-            row[col] = getRandomEmojiFromGroup(FRONT_VEHICLES)
-            continue
-        }
+            case 4:
+                // middle road lines
+                if (rowIndex % 2 === 0) {
+                    row[col] = '╵'
+                    break
+                }
 
-        row[col] = ' '
+                row[col] = ' '
+                break
+
+            default:
+                if (rowIndex === 1 || rowIndex === 7) {
+                    row[col] = maybeGetEmojiFromGroup([...BUILDINGS, ...PLANTS])
+                    break
+                }
+                row[col] = ' '
+                break
+        }
     }
 
     return row

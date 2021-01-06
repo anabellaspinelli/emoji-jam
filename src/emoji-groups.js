@@ -1,18 +1,6 @@
 export const FRONT_VEHICLES = ['🚔', '🚍', '🚘', '🚖']
 export const ANIMALS = ['🦜', '🕊️', '🦮', '🐕‍🦺', '🐩', '🐈', '🐕']
-export const PLANTS = [
-    '🌲',
-    '🌳',
-    '🌴',
-    '🌿',
-    '🌱',
-    '🌾',
-    '🌺',
-    '🌻',
-    '🌹',
-    '🌷',
-    '🌼',
-]
+export const PLANTS = ['🌲', '🌳', '🌴']
 export const PEDESTRIANS = [
     '🧍‍♀️',
     '🧍',
